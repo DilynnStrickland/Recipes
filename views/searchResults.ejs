@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,, initial-scale=1.0">
+    <title>Welcome to Recipes!</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <% if (results) {%>
+        <% let i = 0; %>
+        <% while (i < Object.keys(results).length) {%>
+            <div>
+                <p><%- results.at(i).name %></p>
+                <p><%- results.at(i).ingredients %></p>
+                <p><%- results.at(i).tag %></p>
+            </div>
+            <% i++; %>
+        <% } %>
+    <% } else { %>
+        <div>Nothing to see here!</div>
+    <% } %>
+</body>
+<%- include("./nav")  %>
+</html>
